@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <base href="/" />
+    <meta charset="utf-8" />
+    <title>SpyStore - Angular 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/spystore-bootstrap.css" rel="stylesheet" />
+    <!-- 1. Load libraries -->
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.25/system-polyfills.js"></script>
+    <script src="https://npmcdn.com/angular2@2.0.0-beta.13/es6/dev/src/testing/shims_for_IE.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.13/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://npmcdn.com/typescript@1.8.9/lib/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.13/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.13/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.13/http.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.13/router.dev.js"></script>
+
+    <script src="/lib/es6-shim.js"></script>
+    <script src="/lib/system-polyfills.js"></script>
+    <script src="/lib/shims_for_IE.js"></script>
+    <script src="/lib/angular2-polyfills.js"></script>
+    <script src="/lib/system.js"></script>
+    <script src="/lib/rx.js"></script>
+    <script src="/lib/angular2.dev.js"></script>
+    <script src="/lib/http.dev.js"></script>
+    <script src="/lib/router.dev.js"></script>
+    <script src="/lib/ng2-bootstrap.js"></script>-->
+
+    <!-- 1. Load libraries -->
+    <script src="/lib/shim.min.js"></script>
+    <script src="/lib/zone.js"></script>
+    <script src="/lib/Reflect.js"></script>
+    <script src="/lib/system.src.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        /**
+        * System configuration for Angular 2 samples
+        * Adjust as necessary for your application needs.
+        */
+        (function (global) {
+            System.config({
+                paths: {
+                    // paths serve as alias
+                    'npm:': 'node_modules/'
+                },
+                // map tells the System loader where to look for things
+                map: {
+                    // our app is within the app folder
+                    app: '/js/app',
+                    // angular bundles
+                    '@angular/core': '/lib/core/bundles/core.umd.js',
+                    '@angular/common': '/lib/common/bundles/common.umd.js',
+                    '@angular/compiler': '/lib/compiler/bundles/compiler.umd.js',
+                    '@angular/platform-browser': '/lib/platform-browser/bundles/platform-browser.umd.js',
+                    '@angular/platform-browser-dynamic': '/lib/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+                    '@angular/http': '/lib/http/bundles/http.umd.js',
+                    '@angular/router': '/lib/router/bundles/router.umd.js',
+                    '@angular/forms': '/lib/forms/bundles/forms.umd.js',
+                    // other libraries
+                    'rxjs': '/lib/rxjs',
+                    'ng2-bootstrap/dropdown': '/lib/ng2-bootstrap/dropdown/index.js',
+                    'ng2-bootstrap': '/lib/ng2-bootstrap'
+                },
+                // packages tells the System loader how to load when no filename and/or no extension
+                packages: {
+                    js: {
+                        defaultExtension: 'js'
+                    },
+                    app: {
+                        //boot: './boot.js',
+                        defaultExtension: 'js'
+                    },
+                    rxjs: {
+                        defaultExtension: 'js'
+                    },
+                    'ng2-bootstrap': {
+                        defaultExtension: 'js'
+                    },
+                    'angular2-in-memory-web-api': {
+                        main: './index.js',
+                        defaultExtension: 'js'
+                    }
+                }
+            });
+        })(this);
+        System.import('js/app/boot').catch(function (err) { console.error(err); });
+    </script>
+</head>
+<body>
+	<spystore-app>loading...</spystore-app>
+</body>
+</html>

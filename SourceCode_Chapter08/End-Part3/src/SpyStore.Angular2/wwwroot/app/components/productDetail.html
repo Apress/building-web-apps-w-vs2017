@@ -1,0 +1,30 @@
+﻿<h1 class="visible-xs">{{product.ModelName}}</h1>
+<div class="row product-details-container">
+    <div class="col-sm-6 product-images">
+        <img [src]="'images/' + product.ProductImageLarge" />
+        <div class="key-label">PRODUCT IMAGES</div>
+    </div>
+    <div class="col-sm-6">
+        <h1 class="hidden-xs">{{product.ModelName}}</h1>
+        <div class="price-label">PRICE:</div>
+        <div class="price">{{product.CurrentPrice | currency:'USD':true:'1.2-2'}}</div>
+        <div class="units">Only {{product.UnitsInStock}} left.</div>
+        <div class="product-description" [textContent]="product.Description">
+        </div>
+        <ul class="product-details">
+            <li>
+                <div class="key-label">MODEL NUMBER:</div> N100Z1
+            </li>
+            <li>
+                <div class="key-label">CATEGORY:</div> <a [routerLink]="['/products', product.CategoryId]">{{product.CategoryName}}</a>
+            </li>
+        </ul>
+
+        <div *ngIf="isAuthenticated" class="row cart-group">
+            <label for="qty">QUANTITY:</label>
+            <input type="text" name="qty" [(ngModel)]="quantity" class="cart-quantity form-control" />
+            <button (click)="addToCart()" class="btn btn-primary">Add to Cart</button>
+        </div>
+        <a routerLink="/products">Back to List</a>
+    </div>
+</div>

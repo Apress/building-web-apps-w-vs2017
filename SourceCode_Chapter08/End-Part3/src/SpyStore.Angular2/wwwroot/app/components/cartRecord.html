@@ -1,0 +1,15 @@
+﻿<td>
+    <div class="product-cell-detail">
+        <img src="images/product-thumb.png" class="pull-left" />
+        <a [routerLink]="['/product', record.ProductId]" class="h5">{{record.ModelName}}</a>
+        <div class="small text-muted hidden-xs">{{record.Description}}</div>
+    </div>
+</td>
+<td class="text-right">{{record.CurrentPrice | currency:'USD':true:'1.2-2'}}</td>
+<td class="text-right cart-quantity-row">
+    <input type="number" [(ngModel)]="record.Quantity" class="cart-quantity" />
+    <button class="btn btn-link btn-sm" (click)="updateItem()">Update</button>
+    <button class="btn btn-link btn-sm" (click)="removeItem()">Remove</button>
+</td>
+<td class="text-right">{{record.UnitsInStock }}</td>
+<td class="text-right">{{record.LineItemTotal | currency:'USD':true:'1.2-2'}}</td>

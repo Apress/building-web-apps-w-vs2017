@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+	    <link href="/css/spystore-bootstrap.css" rel="stylesheet" />
+	
+    <base href="/" />
+</head>
+<body>
+
+    <spystore-app>Loading...</spystore-app>
+
+    <script src="/lib/zone.js"></script>
+    <script src="/lib/Reflect.js"></script>
+
+    <script src="/lib/system.src.js"></script>
+    <script>
+        /**
+ * System configuration for Angular 2 samples
+ * Adjust as necessary for your application needs.
+ */
+        (function (global) {
+            System.config({
+                paths: {
+                    // paths serve as alias
+                    'npm:': 'node_modules/'
+                },
+                // map tells the System loader where to look for things
+                map: {
+                    // our app is within the app folder
+                    app: '/js/app',
+                    // angular bundles
+                    '@angular/core': '/lib/core/bundles/core.umd.js',
+                    '@angular/common': '/lib/common/bundles/common.umd.js',
+                    '@angular/compiler': '/lib/compiler/bundles/compiler.umd.js',
+                    '@angular/platform-browser': '/lib/platform-browser/bundles/platform-browser.umd.js',
+                    '@angular/platform-browser-dynamic': '/lib/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+                    '@angular/http': '/lib/http/bundles/http.umd.js',
+                    '@angular/router': '/lib/router/bundles/router.umd.js',
+                    '@angular/forms': '/lib/forms/bundles/forms.umd.js',
+                    // other libraries
+                    'rxjs': '/lib/rxjs'
+                    
+                },
+                // packages tells the System loader how to load when no filename and/or no extension
+                packages: {
+                    js: {
+                        defaultExtension: 'js'
+                    },
+                    app: {
+                        //boot: './boot.js',
+                        defaultExtension: 'js'
+                    },
+                    rxjs: {
+                        defaultExtension: 'js'
+                    }
+                }
+            });
+        })(this);
+        System.import('js/app/boot').catch(function (err) { console.error(err); });
+    </script>
+
+</body>
+</html>

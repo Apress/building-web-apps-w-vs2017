@@ -1,0 +1,17 @@
+{
+  "name": "systemjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "serve": "http-server -o"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "systemjs": "^0.19.41"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}

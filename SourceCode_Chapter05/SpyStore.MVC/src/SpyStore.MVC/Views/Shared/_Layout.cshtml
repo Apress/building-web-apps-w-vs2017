@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            padding-bottom: 60px;
+        }
+    </style>
+    <title>@ViewData["Title"] - SpyStore.MVC</title>
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/css/spystore-bootstrap.css" asp-append-version="true"/>
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/site.min.css" />
+        <link rel="stylesheet" href="~/css/spystore-bootstrap.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <header class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Products" asp-action="Index" class="navbar-brand">SpyStore.MVC</a>
+            </div>
+            <nav class="navbar-collapse collapse header-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown">CATEGORIES <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <vc:menu></vc:menu>
+                            @*@await Component.InvokeAsync(nameof(Menu))*@
+                        </ul>
+                    </li>
+                    @Html.Partial("LoginView")
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="page container">
+        <div class="panel panel-default">
+            <nav class="panel-heading hidden-xs">
+                <div class="store-logo">
+                    <a asp-controller="Products" asp-action="Index"><img style="z-index: 2000" src="~/images/store-logo.png" alt="Spy Store" /></a>
+                </div>
+                <ul class="nav nav-pills hidden-sm">
+                    <vc:menu></vc:menu>
+                </ul>
+            </nav>
+            <div class="panel-body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <footer>
+        <hr />
+        <div class="container">
+            <small class="text-muted">&copy; 2016 - SpyStore.MVC PBK Productions <email email-name="blog" email-domain="skimedic.com"></email></small>
+        </div>
+    </footer>
+
+<environment names="Development">
+    <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</environment>
+    <!--https://www.asp.net/ajax/cdn -->
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.1.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

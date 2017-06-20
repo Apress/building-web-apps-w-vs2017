@@ -1,0 +1,19 @@
+﻿@model SpyStore.MVC.Models.ModelToTestTemplates
+@*<br/>
+@Html.DisplayFor(model=>model.NullableBool)<br/>
+@Html.DisplayFor(model=>model.PostiveBool)<br/>
+@Html.DisplayFor(model=>model.NegativeBool)<br/>
+<hr/>*@
+@Html.EditorFor(model => model.NullableBool)<br />
+@Html.EditorFor(model => model.PostiveBool)<br />
+@Html.EditorFor(model => model.NegativeBool)<br />
+<hr/>
+<input asp-for="NullableBool"/><br/>
+<input asp-for="PostiveBool"/><br/>
+<input asp-for="NegativeBool"/><br/>
+<hr/>
+@Html.DisplayFor(model => model.FullDateTimeNullable,"DateTime1")<br />
+@Html.DisplayFor(model => model.FullDateTime, "DateTime1")<br/>
+@Html.DisplayFor(model => model.JustDate, "DateTime1")<br />
+@Html.DisplayFor(model => model.JustTime, "DateTime1")<br />
+<hr/>

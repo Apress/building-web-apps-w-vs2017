@@ -1,0 +1,32 @@
+﻿<h3>Cart</h3>
+
+<div class="table-responsive">
+    <table class="table table-bordered product-table">
+        <thead>
+            <tr>
+                <th style="width: 70%;">Product</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Quantity</th>
+                <th class="text-right">Available</th>
+                <th class="text-right">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr cart-record [record]="record" (onRecordRemoved)="onCartRecordRemoved($event)" *ngFor="let record of cart?.CartRecords">
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>{{cart?.CartTotal | currency:'USD':true:'1.2-2'}}</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="pull-right">
+    <button routerLink="/checkout" class="btn btn-primary">Checkout</button>
+</div>

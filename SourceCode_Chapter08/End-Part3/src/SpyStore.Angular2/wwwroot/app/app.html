@@ -1,0 +1,66 @@
+﻿<header class="navbar navbar-default navbar-static-top">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".header-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" routerLink="/products">SPY STORE</a>
+        </div>
+
+        <nav class="collapse navbar-collapse header-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a routerLink="/products" class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown">CATEGORIES <span class="caret"></span></a>
+                    <ul class="dropdown-menu" categoryLinks>
+                    </ul>
+                </li>
+                <li><a routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>
+                <li *ngIf="!user || user.Id == 0"><a routerLink="/login"><span class="glyphicon glyphicon-lock"></span> LOGIN</a></li>
+                <li dropdown class="dropdown" *ngIf="user && user.Id > 0">
+                    <a href="#" class="dropdown-toggle" dropdownToggle><span class="glyphicon glyphicon-user"></span> ACCOUNT <span class="caret"></span></a>
+                    <ul dropdownMenu class="dropdown-menu account-dropdown-menu">
+                        <li class="dropdown-header">Welcome, {{user?.FullName}}</li>
+                        <li><a routerLink="/orderHistory">ORDER HISTORY</a></li>
+                        <li><a (click)="logout()">LOGOFF</a></li>
+                    </ul>
+                </li>
+                <li dropdown class="dropdown">
+                    <a href="#" dropdownToggle class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-search"></span> SEARCH</a>
+                    <div dropdownMenu class="dropdown-menu search-dropdown-menu">
+                        <div class="input-group">
+                            <label class="sr-only" for="searchString">Search</label>
+                            <input type="text" id="searchString" name="searchString" [(ngModel)]="searchText" class="form-control" placeholder="SEARCH">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" (click)="search()"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="page container">
+    <div class="panel panel-default">
+        <nav class="panel-heading hidden-xs">
+            <div class="store-logo">
+                <a routerLink="/products"><img src="images/store-logo.png" alt="Spy Store" /></a>
+            </div>
+            <ul class="nav nav-pills hidden-sm" categoryLinks>
+            </ul>
+        </nav>
+        <div class="panel-body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <a href="http://github.com"><img src="images/octocat.png" class="social-icon" /> GitHub</a>
+        <small class="text-muted">&copy; 2016 - SpyStore.Angular2 PKB Productions</small>
+    </div>
+</footer>
