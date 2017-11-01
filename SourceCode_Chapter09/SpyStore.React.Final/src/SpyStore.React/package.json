@@ -10,14 +10,15 @@
     "start": "npm run dev"
   },
   "dependencies": {
-    "@types/react": "0.0.0",
-    "@types/react-router": "^2.0.41",
+
     "jquery": "3.1.1",
     "react": "15.4.2",
-    "react-dom": "^15.4.2",
+    "react-dom": "15.4.2",
     "react-router": "3.0.0"
   },
   "devDependencies": {
+    "@types/react": "0.0.0",
+    "@types/react-router": "3.0.8",
     "@types/jquery": "1.10.31",
     "typescript": "2.1.4",
     "tslint": "4.3.1",
@@ -39,6 +40,6 @@
     "html-webpack-plugin": "2.21.0",
     "compression-webpack-plugin": "0.3.2",
     "copy-webpack-plugin": "4.0.1",
-    "source-map-loader": "^0.1.5"
+    "source-map-loader": "0.1.5"
   }
 }
