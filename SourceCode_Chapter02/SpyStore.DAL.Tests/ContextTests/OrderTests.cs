@@ -10,7 +10,7 @@ using Xunit;
 
 namespace SpyStore.DAL.Tests.Context
 {
-    [Collection("Database Testing")]
+    [Collection("SpyStore.DAL")]
     public class OrderTests : IDisposable
     {
         private readonly StoreContext _db;
