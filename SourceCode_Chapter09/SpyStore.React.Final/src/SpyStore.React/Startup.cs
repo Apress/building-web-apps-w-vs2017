@@ -30,6 +30,17 @@ namespace React.Test1
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
+            
+               app.Use(async (context, next) =>
+            {
+                await next();
+                if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value))
+                {
+                    context.Request.Path = "/index.html";
+                    await next();
+                }
+            });
         }
+        
     }
 }
