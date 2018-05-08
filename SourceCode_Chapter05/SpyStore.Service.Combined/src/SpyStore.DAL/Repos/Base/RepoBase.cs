@@ -86,7 +86,7 @@ namespace SpyStore.DAL.Repos.Base
             var entry = GetEntryFromChangeTracker(id);
             if (entry != null)
             {
-                if (entry.TimeStamp.SequenceEqual(timeStamp))
+                if (timeStamp != null && entry.TimeStamp.SequenceEqual(timeStamp))
                 {
                     return Delete(entry, persist);
                 }

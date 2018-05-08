@@ -57,7 +57,7 @@ namespace SpyStore.MVC
             }
 
             app.UseStaticFiles();
-
+            
             //app.UseMvcWithDefaultRoute();
             app.UseMvc(routes =>
             {
