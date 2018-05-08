@@ -13,11 +13,9 @@ namespace SpyStore.DAL.Repos
     {
         public OrderDetailRepo(DbContextOptions<StoreContext> options) : base(options)
         {
-            Table = Context.OrderDetails;
         }
         public OrderDetailRepo()
         {
-            Table = Context.OrderDetails;
         }
 
         public override IEnumerable<OrderDetail> GetAll()

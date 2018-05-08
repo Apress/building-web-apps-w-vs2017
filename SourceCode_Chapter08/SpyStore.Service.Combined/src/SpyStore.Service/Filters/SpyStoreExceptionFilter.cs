@@ -23,7 +23,8 @@ namespace SpyStore.Service.Filters
         public void OnException(ExceptionContext context)
         {
             var ex = context.Exception;
-            string stackTrace = (_isDevelopment) ? context.Exception.StackTrace : string.Empty; string message = ex.Message;
+            string stackTrace = (_isDevelopment)?context.Exception.StackTrace:string.Empty;
+            string message = ex.Message;
             string error = string.Empty;
             IActionResult actionResult;
             if (ex is InvalidQuantityException)

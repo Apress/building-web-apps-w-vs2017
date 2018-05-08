@@ -12,11 +12,9 @@ namespace SpyStore.DAL.Repos
     {
         public CustomerRepo(DbContextOptions<StoreContext> options) : base(options)
         {
-            Table = Context.Customers;
         }
         public CustomerRepo() : base()
         {
-            Table = Context.Customers;
         }
 
         public override IEnumerable<Customer> GetAll()

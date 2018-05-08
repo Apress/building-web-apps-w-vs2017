@@ -20,13 +20,11 @@ namespace SpyStore.DAL.Repos
         public ShoppingCartRepo(DbContextOptions<StoreContext> options, IProductRepo productRepo) : base(options)
         {
             _productRepo = productRepo;
-            Table = Context.ShoppingCartRecords;
         }
 
         public ShoppingCartRepo(IProductRepo productRepo) : base()
         {
             _productRepo = productRepo;
-            Table = Context.ShoppingCartRecords;
         }
 
         public override IEnumerable<ShoppingCartRecord> GetAll()

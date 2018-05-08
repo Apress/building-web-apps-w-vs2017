@@ -12,11 +12,9 @@ namespace SpyStore.DAL.Repos
     {
         public CategoryRepo(DbContextOptions<StoreContext> options) : base(options)
         {
-            Table = Context.Categories;
         }
         public CategoryRepo()
         {
-            Table = Context.Categories;
         }
         public override IEnumerable<Category> GetAll() 
             => Table.OrderBy(x => x.CategoryName);

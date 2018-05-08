@@ -16,10 +16,12 @@ namespace SpyStore.DAL.Repos.Base
         protected RepoBase()
         {
             Db = new StoreContext();
+            Table = Db.Set<T>();
         }
         protected RepoBase(DbContextOptions<StoreContext> options)
         {
             Db = new StoreContext(options);
+            Table = Db.Set<T>();
         }
 
         protected DbSet<T> Table;
@@ -84,7 +86,7 @@ namespace SpyStore.DAL.Repos.Base
             var entry = GetEntryFromChangeTracker(id);
             if (entry != null)
             {
-                if (entry.TimeStamp == timeStamp)
+                if (timeStamp != null && entry.TimeStamp.SequenceEqual(timeStamp))
                 {
                     return Delete(entry, persist);
                 }

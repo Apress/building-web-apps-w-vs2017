@@ -13,11 +13,9 @@ namespace SpyStore.DAL.Repos
     {
         public ProductRepo(DbContextOptions<StoreContext> options) : base(options)
         {
-            Table = Context.Products;
         }
         public ProductRepo() : base()
         {
-            Table = Context.Products;
         }
         public override IEnumerable<Product> GetAll()
             => Table.OrderBy(x => x.ModelName);
