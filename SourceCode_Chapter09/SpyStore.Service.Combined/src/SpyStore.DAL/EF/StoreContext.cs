@@ -27,7 +27,7 @@ namespace SpyStore.DAL.EF
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // EnablesRetryOnFailure adds default SqlServerRetryingExecutionStrategy
+            // EnableRetryOnFailure adds default SqlServerRetryingExecutionStrategy
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(
