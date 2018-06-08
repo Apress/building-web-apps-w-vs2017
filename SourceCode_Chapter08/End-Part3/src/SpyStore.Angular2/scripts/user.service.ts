@@ -24,12 +24,12 @@ export class UserService {
     ensureAuthenticated(): Observable<User> {
         var observable = new Observable((subscriber) => {
             if (this.IsAuthenticated) {
-                subscriber.next(this.User);
+                subscriber.next();
             } else {
                 // for Demo purposes take first user
                 return this.http.get("http://localhost:40001/api/customer").map(response => <User[]>response.json()).subscribe(users => {
                     this.User = users[0];
-                    subscriber.next(this.User);
+                    subscriber.next();
                 });
             }
         });
